@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CamLink USB</string>
+    <string name="nav_stream">En Vivo</string>
+    <string name="nav_pc_setup">Conexión PC</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="notification_channel_name">Transmisión de Cámara USB</string>
+    <string name="notification_channel_desc">Mantiene activa la transmisión de video en tiempo real hacia tu PC por USB.</string>
+    <string name="notification_title_live">CamLink USB · Transmitiendo en vivo</string>
+    <string name="notification_action_stop">Detener</string>
+    <string name="permission_camera_title">Permiso de cámara requerido</string>
+    <string name="permission_camera_desc">CamLink USB necesita acceso a la cámara para capturar video en tiempo real y enviarlo por USB con latencia ultrabaja.</string>
+    <string name="permission_camera_grant">Permitir cámara</string>
+    <string name="permission_camera_settings">Abrir ajustes del sistema</string>
+    <string name="status_live">EN VIVO</string>
+    <string name="status_ready">LISTO</string>
+    <string name="status_connecting">INICIANDO</string>
+    <string name="action_start_stream">Iniciar transmisión</string>
+    <string name="action_stop_stream">Detener transmisión</string>
+    <string name="cd_flip_camera">Cambiar cámara</string>
+    <string name="cd_toggle_torch">Alternar linterna</string>
+    <string name="cd_toggle_grid">Alternar cuadrícula</string>
+    <string name="cd_focus_lock">Bloquear enfoque</string>
+    <string name="cd_exposure">Ajustar exposición</string>
+    <string name="cd_hide_hud">Ocultar controles</string>
+    <string name="cd_copy_command">Copiar comando</string>
+</resources>

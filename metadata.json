@@ -1,0 +1,8 @@
+{
+  "name": "Remix CamLink USB",
+  "description": "Transmisión de cámara en tiempo real hacia PC por USB con latencia ultrabaja.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

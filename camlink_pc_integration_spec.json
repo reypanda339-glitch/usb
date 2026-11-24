@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.2.0",
+  "generatedAt": "2026-11-23",
+  "senderProject": {
+    "name": "LucyCast Studio",
+    "role": "pc_usb_video_receiver_and_ai_processor",
+    "localOriginUrl": "http://localhost:3000",
+    "companionBatPath": "public/scripts/connect.bat"
+  },
+  "project": {
+    "name": "CamLink USB",
+    "role": "mobile_camera_transmitter",
+    "applicationId": "com.aistudio.applet.bovmsp",
+    "namespace": "com.example",
+    "androidSdk": {
+      "minSdk": 24,
+      "targetSdk": 36,
+      "compileSdk": 36
+    }
+  },
+  "networkContract": {
+    "bindAddress": "0.0.0.0",
+    "videoPort": 7878,
+    "controlHttpPort": 7879,
+    "discoveryUdpPort": 7879,
+    "keepControlServerAliveOnPipelineRestart": true,
+    "adbFallback": [
+      "adb forward tcp:7878 tcp:7878",
+      "adb forward tcp:7879 tcp:7879"
+    ]
+  },
+  "httpControlApiSpec": {
+    "baseUrl": "http://<usbIp_or_127.0.0.1>:7879",
+    "requiredHeaders": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Private-Network": "true",
+      "Cache-Control": "no-store",
+      "Connection": "close"
+    },
+    "optionsPreflight": "HTTP/1.1 204 No Content",
+    "endpoints": [
+      { "method": "GET", "path": "/status" },
+      { "method": "GET", "path": "/use-mjpeg" },
+      { "method": "GET", "path": "/use-h264" },
+      { "method": "GET", "path": "/use-hevc" },
+      { "method": "GET", "path": "/protocol?value=H264_TCP|HEVC_TCP|MJPEG_HTTP" },
+      { "method": "GET", "path": "/flip?lens=BACK|FRONT" },
+      { "method": "GET", "path": "/torch?state=toggle|on|off" },
+      { "method": "GET", "path": "/resolution?value=FHD_1080P|HD_720P|SD_480P|LOW_360P" },
+      { "method": "GET", "path": "/fps?value=60|30|24" },
+      { "method": "GET", "path": "/keyframe" },
+      { "method": "GET", "path": "/start" },
+      { "method": "GET", "path": "/stop" }
+    ]
+  },
+  "udpDiscovery": {
+    "port": 7879,
+    "probePayload": "CAMLINK_WHO",
+    "livePayloadFormat": "CAMLINK_LIVE|ip=<usbIp>|port=<port>|ctrlPort=<ctrlPort>|proto=<proto>|lens=<BACK|FRONT>|w=<width>|h=<height>|fps=<fps>|sensorOrientation=<0|90|180|270>|state=<STATE>|device=<MODEL>",
+    "readyPayloadFormat": "CAMLINK_READY|ip=<usbIp>|port=<port>|ctrlPort=<ctrlPort>|proto=<proto>|lens=<BACK|FRONT>|w=<width>|h=<height>|fps=<fps>|sensorOrientation=<0|90|180|270>|state=<STATE>|device=<MODEL>"
+  }
+}
